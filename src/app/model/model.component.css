@@ -80,7 +80,13 @@
   border-radius: 50%;
   float: right;
   overflow: hidden;
-  /* This is important to hide any parts of the image that overflow the circle */
+}
+.random {
+  width: 400px;
+  height: 350px;
+  border-radius: 50%;
+  float: right;
+  overflow: hidden;
 }
 .carousel-control-next {
   margin-right: -120px;
@@ -89,13 +95,37 @@
 .carousel-control-prev {
   margin-left: -120px;
 }
-/* Ellipse 
-
-position: absolute;
-width: 650px;
-height: 613px;
-left: 498px;
-top: 127px;
-
-background: url(image.png);
-*/
+.heading-2 {
+  color: #47084c;
+  font-family: Poppins;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.text1 {
+  font-family: Poppins;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.button {
+  width: 344px;
+  height: 51px;
+  top: 633px;
+  left: 102px;
+  padding: 14p;
+  border-radius: 10px;
+  border: #47084c;
+}
+.color2 {
+  color: #7d2558;
+}
+.layout1 {
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+}
