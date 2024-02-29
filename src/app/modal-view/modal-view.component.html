@@ -1,0 +1,183 @@
+<div class="container">
+  <h1>Desktop 14 Screen</h1>
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#myModal"
+  >
+    Show MOdel
+  </button>
+  <div
+    class="modal fade"
+    id="myModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body padding-remove">
+          <div class="row grad">
+            <div class="col-md-6">
+              <div class="d-flex justify-content-center mt-2">
+                <img
+                  src="assets/images/test.jpg"
+                  class="p-2 d-flex align-item-center img-layout mt-2 mb-2"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="col-md-6 mt-3">
+              <div
+                class="d-flex justify-content-start mt-2 pe-2"
+                style="font-size: 15px"
+              >
+                <h3 style="color: white; font-size: 18px">Mr. Andrew Dyck</h3>
+              </div>
+              <div class="d-flex flex-column mt-1">
+                <div class="d-flex align-items-center">
+                  <div class="" style="cursor: pointer">
+                    <img src="assets/icons/location.svg" alt="" />
+                  </div>
+                  <div class="ps-2 layout1">Toranto,Ontario,Canada</div>
+                </div>
+                <div class="d-flex align-items-center mt-1">
+                  <div class="" style="cursor: pointer">
+                    <img src="assets/icons/university.svg" alt="" />
+                  </div>
+                  <div class="ps-2 layout1">
+                    Postgraduate of Ancient <br />
+                    Near Easten
+                  </div>
+                </div>
+                <div class="d-flex align-items-center mt-1">
+                  <div class="" style="cursor: pointer">
+                    <img src="assets/icons/admission.svg" alt="" />
+                  </div>
+                  <div class="ps-2 layout1">More than 60 + Admission</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row container">
+            <h3 class="heading-tag mt-3">EarlyBird Counselling</h3>
+            <p class="paragraph-tag mt-2">
+              EarlyBird offers admissions counseling and learning services for
+              elementary-aged children, guiding them from enrichment to
+              admissions.
+            </p>
+            <div class="d-flex justify-content-center">
+              <form [formGroup]="forms" (ngSubmit)="onSubmit()">
+                <div formGroupName="userData">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="studentName"
+                      formControlName="studentName"
+                      placeholder="Student Name"
+                      class="form-control forms-width"
+                    />
+                    <span
+                      *ngIf="
+                        !forms.get('userData.studentName').valid &&
+                        forms.get('userData.studentName').touched
+                      "
+                      class="help-block"
+                    >
+                      <span
+                        *ngIf="
+                          forms.get('userData.studentName').errors[
+                            'nameIsForbidden'
+                          ]
+                        "
+                        >This name is invalid!</span
+                      >
+                      <span
+                        *ngIf="
+                          forms.get('userData.studentName').errors['required']
+                        "
+                        >This field is required!</span
+                      >
+                    </span>
+                  </div>
+                  <div class="form-group mt-2">
+                    <select
+                      class="form-control forms-width"
+                      formControlName="higherEdu"
+                    >
+                      <option *ngFor="let item of data" value="{{ item.code }}">
+                        {{ item.name }}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="form-group mt-2">
+                    <input
+                      type="text"
+                      id="studentName"
+                      formControlName="college"
+                      placeholder="Dream College"
+                      class="form-control forms-width"
+                    />
+                    <span
+                      *ngIf="
+                        !forms.get('userData.college').valid &&
+                        forms.get('userData.college').touched
+                      "
+                      class="help-block"
+                    >
+                      <span
+                        *ngIf="forms.get('userData.college').errors['required']"
+                        >This field is required!</span
+                      >
+                    </span>
+                  </div>
+                  <div class="form-group mt-2">
+                    <textarea
+                      class="form-control forms-width"
+                      formControlName="message"
+                      placeholder="Provide your requests."
+                      id="floatingTextarea2"
+                      style="height: 100px"
+                    ></textarea>
+                    <span
+                      *ngIf="
+                        !forms.get('userData.message').valid &&
+                        forms.get('userData.message').touched
+                      "
+                      class="help-block"
+                    >
+                      <span
+                        *ngIf="forms.get('userData.message').errors['required']"
+                        >This field is required!</span
+                      >
+                    </span>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-center mt-2">
+                  <button
+                    class="button"
+                    style="color: #ffffff; background-color: #7d2558"
+                    type="submit"
+                    [disabled]="!forms.valid"
+                  >
+                    Submit
+                  </button>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                  <button
+                    class="button"
+                    style="color: #7d2558; background-color: #ffffff"
+                  >
+                    Back
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
